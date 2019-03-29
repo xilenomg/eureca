@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/xilenomg/eureca/issues"
   },
-  "homepage": "https://github.com/xilenomg/eureca#readme"
+  "homepage": "https://github.com/xilenomg/eureca#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
