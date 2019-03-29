@@ -1,6 +1,14 @@
 {
   "development": {
-    "PORT": 3000,
-    "HOST": "0.0.0.0"
+    "username": "root",
+    "password": "root",
+    "database": "eureca",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+
+    "server": {
+      "PORT": 3000,
+      "HOST": "0.0.0.0"
+    }
   }
 }

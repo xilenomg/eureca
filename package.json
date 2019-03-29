@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/xilenomg/eureca#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "sequelize": "^5.2.3"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.18.10",
+    "sequelize-cli": "^5.4.0"
   }
 }
