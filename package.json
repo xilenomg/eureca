@@ -1,0 +1,19 @@
+{
+  "name": "eureca-app",
+  "version": "1.0.0",
+  "description": "Teste realizado por Luis Felipe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xilenomg/eureca.git"
+  },
+  "author": "Luis Felipe Corrêa Pérez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xilenomg/eureca/issues"
+  },
+  "homepage": "https://github.com/xilenomg/eureca#readme"
+}
