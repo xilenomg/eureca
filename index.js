@@ -1,7 +1,6 @@
 'use strict';
 const express = require('express');
-const ConfigurationModule = require('./config/ConfigurationModule');
-
+const ConfigurationModule = require('./server/src/config/ConfigurationModule');
 
 const app = express();
 app.use('/', require('./server/src/router/api'))
