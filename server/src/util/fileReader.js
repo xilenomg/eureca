@@ -12,8 +12,14 @@ const readFile = (filePath, arrayOfFields = [], model, queryInterface) => {
     const lineReader = readline.createInterface(instream, outstream);
 
     let arrayData = [];
+    let lineCount = 0;
 
     lineReader.on('line', (line) => {
+      if (lineCount === 0) {
+        lineCount++;
+        return;
+      }
+      lineCount++;
       const lineSplitted = line.split("\t");
       const data = {};
       arrayOfFields.forEach((field, index) => {

@@ -4,7 +4,7 @@ const fileReader = require('../util/fileReader');
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return new Promise((reject, resolve) => {
+    return Promise.all([new Promise((resolve, reject) => {
       fileReader('../../imdb/title.akas.tsv', ['titleId', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle'], 'Titles', queryInterface).then(({
         queryInterfaceResult
       }) => {
@@ -13,7 +13,7 @@ module.exports = {
         console.error(error);
         reject(error)
       })
-    })
+    })])
   },
 
   down: (queryInterface, Sequelize) => {
