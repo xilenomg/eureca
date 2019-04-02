@@ -1,6 +1,8 @@
-$primaryColor: #2DFFAE;
-$primaryColorContrast: #000000;
-$secondaryColor: #CCCCCC;
-$secondaryColorContrast: 000000;
-$tertiaryColor: #000000;
-$tertiaryColorContrast: #FFFFFF;
+@import './colors.scss';
+
+$primaryColor: $green-1;
+$primaryColorContrast: black;
+$secondaryColor: $grey-1;
+$secondaryColorContrast: black;
+$tertiaryColor: black;
+$tertiaryColorContrast: white;

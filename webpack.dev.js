@@ -10,7 +10,6 @@ module.exports = merge(common, {
     hot: true
   },
   plugins: [
-
     new webpack.HotModuleReplacementPlugin()
   ]
 });
