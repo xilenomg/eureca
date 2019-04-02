@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Title = sequelize.define('Titles', {
+  const Titles = sequelize.define('Titles', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -15,10 +15,18 @@ module.exports = (sequelize, DataTypes) => {
     attributes: DataTypes.STRING,
     types: DataTypes.ENUM(['alternative', 'dvd', 'festival', 'tv', 'video', 'working', 'original', 'imdbDisplay']),
     isOriginalTitle: DataTypes.BOOLEAN
-  }, {});
+  }, {
+    timestamps: true,
+    paranoid: true,
+    freezeTableName: true
+  });
 
-  Title.associate = function (models) {
-    // associations can be defined here
+  Titles.associate = function (models) {
+    Titles.hasOne(models.TitleRatings, {
+      as: 'rating',
+      sourceKey: 'titleId',
+      foreignKey: 'titleId',
+    })
   };
-  return Title;
+  return Titles;
 };

@@ -5,10 +5,15 @@
     "database": "eureca",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "debug": true,
 
     "server": {
       "PORT": 3000,
       "HOST": "0.0.0.0"
+    },
+
+    "titles": {
+      "MAX_PER_PAGE": 20
     }
   }
 }

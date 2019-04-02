@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const TitleRating = sequelize.define('TitleRatings', {
+  const TitleRatings = sequelize.define('TitleRatings', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -21,10 +21,17 @@ module.exports = (sequelize, DataTypes) => {
     deletedAt: {
       type: DataTypes.DATE
     }
-  }, {});
+  }, {
+    timestamps: true,
+    paranoid: true,
+    freezeTableName: true
+  });
 
-  TitleRating.associate = function (models) {
-    // associations can be defined here
+  TitleRatings.associate = function (models) {
+    TitleRatings.belongsTo(models.Titles, {
+      foreignKey: 'titleId',
+      targetKey: 'titleId'
+    })
   };
-  return TitleRating;
+  return TitleRatings;
 };
