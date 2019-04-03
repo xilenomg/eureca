@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
 
   Titles.associate = function (models) {
     Titles.hasOne(models.TitleRatings, {
-      as: 'rating',
       sourceKey: 'titleId',
       foreignKey: 'titleId',
     })

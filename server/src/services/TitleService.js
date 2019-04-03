@@ -5,16 +5,20 @@ const Op = Sequelize.Op;
 
 const TitleService = {
   getOriginalTitles: (page = 1, limit = ConfigurationModule.titles.MAX_PER_PAGE) => {
-    const offset = page === 0 ? 0 : (page * limit) - limit;
+    const offset = page === 0 ? 0 : page * limit - limit;
     return models.Titles.findAll({
       where: {
         isOriginalTitle: 1
       },
+      order: [[models.TitleRatings, 'averageRating', 'desc']],
+      include: [{
+        model: models.TitleRatings
+      }],
       offset: offset,
       limit: limit
     }).then((result) => {
       return result;
-    })
+    });
   },
   getTitle: async (id) => {
     let title;
@@ -25,13 +29,12 @@ const TitleService = {
           id: id
         },
         include: [{
-          model: models.TitleRatings,
-          as: 'rating'
+          model: models.TitleRatings
         }]
       });
     } catch (err) {
       console.error(err);
-      throw (new Error('Title not found'));
+      throw new Error('Title not found');
     }
 
     try {
@@ -43,9 +46,7 @@ const TitleService = {
           }
         }
       });
-    } catch (err) {
-
-    }
+    } catch (err) {}
 
     return {
       title,

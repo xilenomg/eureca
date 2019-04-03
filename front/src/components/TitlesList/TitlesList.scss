@@ -1,0 +1,42 @@
+@import '../../assets/styles/variables.scss';
+
+.TitlesList {
+  .--controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .--items {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .TitleItem {
+      flex-basis: 49%;
+      margin-right: 1%;
+      margin-bottom: 10px;
+
+      @media(min-width: $viewport-xs-breakpoint) {
+        flex-basis: 32%;
+        margin-right: 1%;
+      }
+
+      @media(min-width: $viewport-sm-breakpoint) {
+        flex-basis: 24%;
+        margin-right: 1%;
+      }
+
+      @media(min-width: $viewport-lg-breakpoint) {
+        flex-basis: 19%;
+        margin-right: 1%;
+      }
+
+      @media(min-width: $viewport-xl-breakpoint) {
+        flex-basis: 13%;
+        margin-right: 1%;
+      }
+    }
+  }
+}

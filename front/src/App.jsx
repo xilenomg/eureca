@@ -15,8 +15,10 @@ class App extends Component {
       <div className="EurecaApp">
         <Router>
           <Header />
-          <Route path="/" exact component={Titles} />
-          <Route path="/title/:id" exact component={Title} />
+          <div className='--content'>
+            <Route path="/" exact component={Titles} />
+            <Route path="/title/:id" exact component={Title} />
+          </div>
           <Footer />
         </Router>
       </div>

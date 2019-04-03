@@ -1,8 +1,12 @@
 'use strict';
 const express = require('express');
+const cors = require('cors');
 const ConfigurationModule = require('./server/src/config/ConfigurationModule');
 
 const app = express();
+app.use(cors({
+  origin: 'http://localhost:8080'
+}));
 // definindo /dist como pasta publica
 app.use(express.static(`${__dirname}/dist`));
 

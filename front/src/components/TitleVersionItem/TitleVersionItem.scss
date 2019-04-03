@@ -1,0 +1,49 @@
+@import '../../assets/styles/variables.scss';
+
+.TitleVersionItem {
+  background: $grey-4;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+
+  .--image {
+    background: $grey-3;
+    width: 100%;
+    height: 100px;
+  }
+
+  .--content {
+    padding: 10px;
+    flex: 1;
+
+    h2 {
+      text-size-adjust: 80%;
+      font-size: 1.3em;
+      @media(max-width: $viewport-xs-breakpoint) {
+        font-size: 1.2em;
+      }
+
+      @media(max-width: $viewport-sm-breakpoint) {
+        font-size: 1.2em;
+      }
+
+      @media(max-width: $viewport-lg-breakpoint) {
+        font-size: 1em;
+      }
+    }
+
+  }
+
+  a {
+    background: $orange-1;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    transition: 0.4s all;
+
+    &:hover {
+      background: $green-1;
+      color: $green-2;
+    }
+  }
+}

@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     TitleRatings.belongsTo(models.Titles, {
       foreignKey: 'titleId',
       targetKey: 'titleId'
-    })
+    });
   };
   return TitleRatings;
 };

@@ -13,7 +13,7 @@
     },
 
     "titles": {
-      "MAX_PER_PAGE": 20
+      "MAX_PER_PAGE": 100
     }
   }
 }

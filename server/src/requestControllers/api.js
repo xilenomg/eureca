@@ -10,26 +10,29 @@ const ApiRequestController = {
         error: null,
         page,
         data: titles
-      })
+      });
     }).catch((err) => {
       res.status(500).json({
         error: err.message,
         data: null
-      })
-    })
-
+      });
+    });
   },
+
   // usando async/await
   titleById: async (req, res) => {
     const id = req.params.id;
     try {
       const title = await TitleController.titleById(id);
-      res.json(title)
+      res.json({
+        error: null,
+        data: title
+      });
     } catch (err) {
       res.status(500).json({
         error: err.message,
         data: null
-      })
+      });
     }
   }
 }

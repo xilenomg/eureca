@@ -2,10 +2,35 @@ body {
   padding: 0px;
   margin: 0px;
   background: white;
-  padding-bottom: 25px;
+  padding-bottom: 33px;
+  min-width: 320px;
 
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  h1{
+    border-bottom: 1px solid black;
+  }
+
+  h2{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 0px;
+    &.primary{
+      background: $green-1;
+      color: black;
+    }
+
+    &.secondary{
+      background: $grey-1;
+      color: $grey-3;
+    }
   }
 }
