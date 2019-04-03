@@ -6,6 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "server": "nodemon index",
+    "db:install": "cd server/src/ && sequelize db:migrate",
+    "db:seed": "cd server/src/ && sequelize db:seed:all",
     "start": "concurrently \"npm run server\" \"webpack-dev-server --open --config webpack.dev.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
